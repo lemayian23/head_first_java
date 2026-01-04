@@ -1,6 +1,5 @@
 /*
- * TechLearningProjects.java
- * Location: /home/username/java_learning/ or C:\Users\username\java_learning\
+
  *
  * This file contains two Java learning projects:
  * 1. An enhanced BottleSong with multiple features
@@ -92,7 +91,7 @@ public class TechLearningProjects {
         }
 
         /**
-         * Adds a delay to make the song more realistic
+         * Delay to make music more realistic
          * @param milliseconds Delay in milliseconds
          */
         private static void addDelay(int milliseconds) {

@@ -463,4 +463,20 @@ System.out.print("Enable funny mode? (yes/no): ");
 System.out.println(ConsoleColors.GREEN_BOLD + "🎵 ENHANCED BOTTLE SONG GENERATOR 🎵" + ConsoleColors.RESET);
 System.out.println(ConsoleColors.CYAN + bottles + ConsoleColors.YELLOW + " green " + word + ConsoleColors.RESET + ", hanging on the wall");
 }
-
+// Add this method
+public static void printBanner(String programName) {
+    System.out.println();
+    System.out.println("╔══════════════════════════════════════════════════════════╗");
+    System.out.println("║                                                          ║");
+    System.out.println("║   ██████╗ ██████╗  ██████╗  ██████╗ ██████╗ ███████╗    ║");
+    System.out.println("║   ██╔══██╗██╔══██╗██╔═══██╗██╔════╝██╔═══██╗██╔════╝    ║");
+    System.out.println("║   ██████╔╝██████╔╝██║   ██║██║     ██║   ██║███████╗    ║");
+    System.out.println("║   ██╔═══╝ ██╔══██╗██║   ██║██║     ██║   ██║╚════██║    ║");
+    System.out.println("║   ██║     ██║  ██║╚██████╔╝╚██████╗╚██████╔╝███████║    ║");
+    System.out.println("║   ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝    ║");
+    System.out.println("║                                                          ║");
+    System.out.println("║                   " + programName + "                  ║");
+    System.out.println("║                                                          ║");
+    System.out.println("╚══════════════════════════════════════════════════════════╝");
+    System.out.println();
+}

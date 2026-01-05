@@ -111,6 +111,18 @@ public class TechLearningProjects {
      */
     public static class EnhancedPhraseOMatic {
 
+        // Add these static variables at the top of EnhancedPhraseOMatic class
+        private static int totalPhrasesGenerated = 0;
+        private static int phrasesSavedToFile = 0;
+
+// Update in generateSinglePhrase():
+        totalPhrasesGenerated++;
+System.out.println("📊 Total phrases generated today: " + totalPhrasesGenerated);
+
+// Update in generateAndSavePhrases():
+        phrasesSavedToFile += count;
+System.out.println("💾 Total phrases saved to files: " + phrasesSavedToFile);
+
         // Word lists
         private static final String[] WORD_LIST_ONE = {
                 "agnostic", "opinionated", "voice activated", "haptically driven",

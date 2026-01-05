@@ -364,4 +364,29 @@ public class TechLearningProjects {
 
         scanner.close();
     }
+    // Add this class inside TechLearningProjects.java
+    public static class ConsoleColors {
+        // Reset
+        public static final String RESET = "\033[0m";
+
+        // Colors
+        public static final String RED = "\033[0;31m";
+        public static final String GREEN = "\033[0;32m";
+        public static final String YELLOW = "\033[0;33m";
+        public static final String BLUE = "\033[0;34m";
+        public static final String PURPLE = "\033[0;35m";
+        public static final String CYAN = "\033[0;36m";
+        public static final String WHITE = "\033[0;37m";
+
+        // Bold Colors
+        public static final String RED_BOLD = "\033[1;31m";
+        public static final String GREEN_BOLD = "\033[1;32m";
+        public static final String YELLOW_BOLD = "\033[1;33m";
+        public static final String BLUE_BOLD = "\033[1;34m";
+    }
+
+// Then use it in your print statements:
+System.out.println(ConsoleColors.GREEN_BOLD + "🎵 ENHANCED BOTTLE SONG GENERATOR 🎵" + ConsoleColors.RESET);
+System.out.println(ConsoleColors.CYAN + bottles + ConsoleColors.YELLOW + " green " + word + ConsoleColors.RESET + ", hanging on the wall");
 }
+

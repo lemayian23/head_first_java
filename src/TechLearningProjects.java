@@ -304,7 +304,25 @@ System.out.print("Enable funny mode? (yes/no): ");
                 }
             }
         }
+        // Add to EnhancedPhraseOMatic
+        public static void generateQuickRandom() {
+            String[][] quickCombos = {
+                    {"agile", "cloud", "solution"},
+                    {"dynamic", "scalable", "platform"},
+                    {"innovative", "AI-powered", "framework"},
+                    {"modern", "serverless", "architecture"}
+            };
 
+            Random rand = new Random();
+            String[] combo = quickCombos[rand.nextInt(quickCombos.length)];
+
+            System.out.println("⚡ Quick random phrase: " +
+                    combo[0] + " " + combo[1] + " " + combo[2]);
+
+            // Add fun rating
+            String[] ratings = {"⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"};
+            System.out.println("Coolness rating: " + ratings[rand.nextInt(ratings.length)]);
+        }
         /**
          * Generates a phrase based on a custom pattern
          * @param pattern Pattern like "A-B-C" or "D-A-B-C-E"

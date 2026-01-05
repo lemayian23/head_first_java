@@ -548,3 +548,24 @@ public static void showProgress(int current, int total, String message) {
 
     if (current == total) System.out.println(); // New line when complete
 }
+
+// Add to EnhancedPhraseOMatic class
+private static List<String> favoritePhrases = new ArrayList<>();
+
+// Method to add favorites
+public static void addToFavorites(String phrase) {
+    favoritePhrases.add(phrase);
+    System.out.println("❤️ Added to favorites!");
+}
+
+// Method to show favorites
+public static void showFavorites() {
+    if (favoritePhrases.isEmpty()) {
+        System.out.println("No favorites yet!");
+    } else {
+        System.out.println("\n❤️ YOUR FAVORITE PHRASES:");
+        for (int i = 0; i < favoritePhrases.size(); i++) {
+            System.out.println((i + 1) + ". " + favoritePhrases.get(i));
+        }
+    }
+}

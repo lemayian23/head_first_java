@@ -532,3 +532,19 @@ public static void surpriseMe() {
             break;
     }
 }
+
+// Add to generateMultiplePhrases() or singFullSong()
+public static void showProgress(int current, int total, String message) {
+    int width = 50; // width of progress bar
+    int progress = (current * width) / total;
+
+    System.out.print("\r" + message + " [");
+    for (int i = 0; i < width; i++) {
+        if (i < progress) System.out.print("=");
+        else if (i == progress) System.out.print(">");
+        else System.out.print(" ");
+    }
+    System.out.print("] " + current + "/" + total);
+
+    if (current == total) System.out.println(); // New line when complete
+}

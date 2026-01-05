@@ -1,6 +1,5 @@
 /*
  * TechLearningProjects.java
- * Location: /home/username/java_learning/ or C:\Users\username\java_learning\
  *
  * This file contains two Java learning projects:
  * 1. An enhanced BottleSong with multiple features
@@ -442,7 +441,6 @@ public class TechLearningProjects {
             Random rand = new Random();
             int surprise = rand.nextInt(5);
 
-            System.out.println(ConsoleColors.PURPLE_BOLD + "\n🎁 SURPRISE! 🎁" + ConsoleColors.RESET);
 
             switch(surprise) {
                 case 0:

@@ -278,6 +278,33 @@ System.out.println("What we need is a " + phrase);
             }
         }
 
+        // Add this option to BottleSong main menu
+System.out.print("Enable funny mode? (yes/no): ");
+        boolean funnyMode = scanner.next().equalsIgnoreCase("yes");
+
+        // Modify singVerse() method:
+        public static void singVerse(int bottles, boolean funnyMode) {
+            String word = bottles == 1 ? "bottle" : "bottles";
+
+            if (funnyMode) {
+                String[] funnyComments = {
+                        "...wait, why are they green anyway?",
+                        "...hope the wall is strong enough!",
+                        "...don't look directly at them!",
+                        "...is that eco-friendly glass?"
+                };
+
+                if (bottles > 0) {
+                    System.out.println(bottles + " suspiciously green " + word + ", hanging on the wall");
+                    System.out.println(bottles + " very questionable " + word + ", hanging on the wall");
+                    System.out.println("And if one green bottle should attempt an escape,");
+
+                    Random rand = new Random();
+                    System.out.println(funnyComments[rand.nextInt(funnyComments.length)]);
+                }
+            }
+        }
+
         /**
          * Generates a phrase based on a custom pattern
          * @param pattern Pattern like "A-B-C" or "D-A-B-C-E"

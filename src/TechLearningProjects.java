@@ -157,6 +157,23 @@ System.out.println("💾 Total phrases saved to files: " + phrasesSavedToFile);
 
         private static final Random RANDOM = new Random();
 
+        // Add this method to EnhancedPhraseOMatic
+        public static void copyToClipboard(String text) {
+            try {
+                java.awt.Toolkit.getDefaultToolkit()
+                        .getSystemClipboard()
+                        .setContents(new java.awt.datatransfer.StringSelection(text), null);
+                System.out.println("📋 Phrase copied to clipboard!");
+            } catch (Exception e) {
+                System.out.println("⚠️ Could not copy to clipboard: " + e.getMessage());
+            }
+        }
+
+        // Call it after generating a phrase:
+        String phrase = buildEnhancedPhrase();
+System.out.println("What we need is a " + phrase);
+        copyToClipboard(phrase);
+
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
 

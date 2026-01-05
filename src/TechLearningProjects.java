@@ -480,3 +480,55 @@ public static void printBanner(String programName) {
     System.out.println("╚══════════════════════════════════════════════════════════╝");
     System.out.println();
 }
+
+// Add to main menu
+System.out.println("5. Surprise Me! (Random Feature)");
+
+// The method:
+public static void surpriseMe() {
+    Random rand = new Random();
+    int surprise = rand.nextInt(4);
+
+    switch(surprise) {
+        case 0:
+            System.out.println("🎁 SURPRISE! Here's a limerick:");
+            System.out.println("There once was a coder so keen,");
+            System.out.println("Whose code was remarkably clean.");
+            System.out.println("With functions so neat,");
+            System.out.println("And no obsolete,");
+            System.out.println("The best coder you've ever seen!");
+            break;
+
+        case 1:
+            System.out.println("🎁 SURPRISE! Tech Fact:");
+            String[] facts = {
+                    "The first computer bug was an actual moth!",
+                    "Java was originally called Oak.",
+                    "Python is named after Monty Python, not the snake.",
+                    "There are over 700 programming languages!"
+            };
+            System.out.println(facts[rand.nextInt(facts.length)]);
+            break;
+
+        case 2:
+            System.out.println("🎁 SURPRISE! Quick phrase challenge:");
+            System.out.println("Can you say this 5 times fast?");
+            String[] tongueTwisters = {
+                    "Serverless service services servers servicelessly",
+                    "Cloud-native containerized container containers",
+                    "Microservices messily manage messages"
+            };
+            System.out.println(tongueTwisters[rand.nextInt(tongueTwisters.length)]);
+            break;
+
+        case 3:
+            System.out.println("🎁 SURPRISE! Developer joke:");
+            String[] jokes = {
+                    "Why do programmers prefer dark mode?\nBecause light attracts bugs!",
+                    "How many programmers does it take to change a light bulb?\nNone, that's a hardware problem!",
+                    "What's a programmer's favorite place?\nThe Foo Bar!"
+            };
+            System.out.println(jokes[rand.nextInt(jokes.length)]);
+            break;
+    }
+}

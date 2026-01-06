@@ -15,7 +15,7 @@ import java.util.List;
 
 public class TechLearningProjects {
 
-    // ==================== CONSOLE COLORS ====================
+    // CONSOLE COLORS
 
     public static class ConsoleColors {
         // Reset

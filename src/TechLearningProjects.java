@@ -727,5 +727,7 @@ if (i % 3 == 0 && i > 0) { // Every 3 verses
         System.out.println(ConsoleColors.GREEN + "File Location: " + ConsoleColors.RESET + "TechLearningProjects.java");
         System.out.println(ConsoleColors.GREEN + "Compilation: " + ConsoleColors.RESET + "javac TechLearningProjects.java");
         System.out.println(ConsoleColors.GREEN + "Execution: " + ConsoleColors.RESET + "java TechLearningProjects");
+        // Add to any menu system:
+        System.out.println("💡 Tip: Try typing 'debug' anywhere for a secret!");
     }
 }

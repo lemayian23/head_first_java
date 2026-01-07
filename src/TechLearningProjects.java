@@ -669,6 +669,19 @@ if (phraseLength > 60) {
 
         // Add to menu option 10
     }
+// Add to BottleSong's singFullSong method, inside the loop:
+if (i % 3 == 0 && i > 0) { // Every 3 verses
+        String[] facts = {
+                "💡 Fun fact: The original song has 10 verses!",
+                "🎵 Did you know? This song is often used to teach loops!",
+                "📚 Trivia: The song dates back to the 17th century!",
+                "🤔 Thought: Why are the bottles green anyway?",
+                "🎶 Memory: This song helps with counting backwards!"
+        };
+        Random rand = new Random();
+        System.out.println(ConsoleColors.PURPLE + facts[rand.nextInt(facts.length)] + ConsoleColors.RESET);
+        System.out.println();
+    }
 
     public static void showProjectInfo() {
         System.out.println(ConsoleColors.BLUE_BOLD + "\n📚 PROJECT INFORMATION" + ConsoleColors.RESET);

@@ -683,6 +683,24 @@ if (i % 3 == 0 && i > 0) { // Every 3 verses
         System.out.println();
     }
 
+    // Add static variable at top of EnhancedPhraseOMatic:
+    private static String lastGeneratedPhrase = "";
+
+// Update in generateSinglePhrase() method (store the phrase):
+    lastGeneratedPhrase = phrase;
+
+    // Add this new method:
+    public static void copyLastPhrase() {
+        if (lastGeneratedPhrase.isEmpty()) {
+            System.out.println(ConsoleColors.RED + "No phrase generated yet!" + ConsoleColors.RESET);
+        } else {
+            System.out.println("Last phrase was: " + lastGeneratedPhrase);
+            copyToClipboard(lastGeneratedPhrase);
+        }
+    }
+
+// Add to menu: "10. Copy last generated phrase"
+
     public static void showProjectInfo() {
         System.out.println(ConsoleColors.BLUE_BOLD + "\n📚 PROJECT INFORMATION" + ConsoleColors.RESET);
         System.out.println(ConsoleColors.CYAN + "=====================" + ConsoleColors.RESET);

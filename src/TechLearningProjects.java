@@ -649,6 +649,27 @@ if (phraseLength > 60) {
         System.out.println("👍 Perfect length!");
     }
 
+    // Add this method to EnhancedPhraseOMatic class:
+    public static void dailyChallenge() {
+        System.out.println(ConsoleColors.GREEN_BOLD + "\n🎯 DAILY CODING CHALLENGE 🎯" + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.CYAN + "==========================" + ConsoleColors.RESET);
+
+        String[] challenges = {
+                "Try to use 'blockchain' and 'microservices' in one sentence",
+                "Create a tech phrase that rhymes",
+                "Generate a phrase with exactly 50 characters",
+                "Make a phrase that would impress your boss",
+                "Create the most confusing tech buzzword combo possible"
+        };
+
+        Random rand = new Random();
+        String challenge = challenges[rand.nextInt(challenges.length)];
+        System.out.println("Today's challenge: " + challenge);
+        System.out.print("\nGenerate a phrase that meets this challenge! ");
+
+        // Add to menu option 10
+    }
+
     public static void showProjectInfo() {
         System.out.println(ConsoleColors.BLUE_BOLD + "\n📚 PROJECT INFORMATION" + ConsoleColors.RESET);
         System.out.println(ConsoleColors.CYAN + "=====================" + ConsoleColors.RESET);

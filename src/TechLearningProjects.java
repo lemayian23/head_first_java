@@ -636,6 +636,19 @@ if (secretCode.equals("java4life") || secretCode.equals("bottlesong")) {
         System.out.println(ConsoleColors.RESET);
     }
 
+    // Add to generateSinglePhrase() method, after phrase generation:
+    int phraseLength = phrase.length();
+System.out.println("📏 Phrase length: " + phraseLength + " characters");
+
+// Add fun comments based on length:
+if (phraseLength > 60) {
+        System.out.println("😲 That's quite a mouthful!");
+    } else if (phraseLength < 30) {
+        System.out.println("✨ Short and sweet!");
+    } else {
+        System.out.println("👍 Perfect length!");
+    }
+
     public static void showProjectInfo() {
         System.out.println(ConsoleColors.BLUE_BOLD + "\n📚 PROJECT INFORMATION" + ConsoleColors.RESET);
         System.out.println(ConsoleColors.CYAN + "=====================" + ConsoleColors.RESET);

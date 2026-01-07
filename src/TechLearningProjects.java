@@ -617,6 +617,25 @@ public class TechLearningProjects {
         }
     }
 
+    // Add to EnhancedPhraseOMatic main method, right after Scanner creation:
+System.out.print("Enter a secret code (or press Enter to skip): ");
+    String secretCode = scanner.nextLine();
+
+if (secretCode.equals("java4life") || secretCode.equals("bottlesong")) {
+        System.out.println(ConsoleColors.PURPLE_BOLD + "\n🎉 SECRET MODE UNLOCKED! 🎉");
+        System.out.println("You found the easter egg! Here's a special phrase:");
+
+        String[] secretPhrases = {
+                "ULTIMATE quantum blockchain AI framework",
+                "MAGICAL voice-activated edge computing platform",
+                "LEGENDARY haptically driven distributed ledger",
+                "MYTHICAL agent-based serverless architecture"
+        };
+        Random rand = new Random();
+        System.out.println(secretPhrases[rand.nextInt(secretPhrases.length)]);
+        System.out.println(ConsoleColors.RESET);
+    }
+
     public static void showProjectInfo() {
         System.out.println(ConsoleColors.BLUE_BOLD + "\n📚 PROJECT INFORMATION" + ConsoleColors.RESET);
         System.out.println(ConsoleColors.CYAN + "=====================" + ConsoleColors.RESET);

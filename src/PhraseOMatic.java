@@ -50,4 +50,125 @@ public class PhraseOMatic {
         System.out.println("What we need is a " + phrase);
 
     }
+    // Add this method to the EnhancedPhraseOMatic class (anywhere after the other methods):
+
+    /**
+     * Analyzes a phrase and shows word count statistics
+     */
+    public static void analyzePhrase(String phrase) {
+        System.out.println(ConsoleColors.BLUE_BOLD + "\n📊 PHRASE ANALYSIS" + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.CYAN + "=================" + ConsoleColors.RESET);
+
+        // Count words
+        String[] words = phrase.split(" ");
+        int wordCount = words.length;
+
+        // Count characters (excluding spaces)
+        int charCount = phrase.replace(" ", "").length();
+
+        // Find longest word
+        String longestWord = "";
+        for (String word : words) {
+            if (word.length() > longestWord.length()) {
+                longestWord = word;
+            }
+        }
+
+        // Count syllables (rough estimate)
+        int syllableCount = 0;
+        for (String word : words) {
+            syllableCount += countSyllables(word);
+        }
+
+        // Calculate readability score (simple Flesch-like)
+        double readability = 206.835 - (1.015 * wordCount) - (84.6 * (syllableCount / (double)wordCount));
+
+        // Display results
+        System.out.println("📝 Original phrase: " + ConsoleColors.YELLOW + phrase + ConsoleColors.RESET);
+        System.out.println("🔢 Word count: " + ConsoleColors.GREEN + wordCount + ConsoleColors.RESET);
+        System.out.println("🔤 Character count: " + ConsoleColors.GREEN + charCount + ConsoleColors.RESET);
+        System.out.println("🏆 Longest word: " + ConsoleColors.GREEN + longestWord + " (" + longestWord.length() + " letters)" + ConsoleColors.RESET);
+        System.out.println("🎵 Estimated syllables: " + ConsoleColors.GREEN + syllableCount + ConsoleColors.RESET);
+
+        // Fun rating based on length
+        System.out.print("📏 Length rating: ");
+        if (wordCount <= 3) {
+            System.out.println(ConsoleColors.GREEN + "Short & Sweet! ✨" + ConsoleColors.RESET);
+        } else if (wordCount <= 5) {
+            System.out.println(ConsoleColors.YELLOW + "Just Right! 👍" + ConsoleColors.RESET);
+        } else {
+            System.out.println(ConsoleColors.RED + "Mouthful! 😲" + ConsoleColors.RESET);
+        }
+
+        // Tech buzzword detector
+        System.out.print("🚀 Tech level: ");
+        int techWords = 0;
+        for (String word : words) {
+            if (isTechBuzzword(word)) {
+                techWords++;
+            }
+        }
+
+        if (techWords >= 3) {
+            System.out.println(ConsoleColors.CYAN + "Ultra-Techy! 🤖 (" + techWords + " buzzwords)" + ConsoleColors.RESET);
+        } else if (techWords >= 2) {
+            System.out.println(ConsoleColors.BLUE + "Pretty Techy! 💻 (" + techWords + " buzzwords)" + ConsoleColors.RESET);
+        } else {
+            System.out.println("Normal Tech Level 👨‍💻");
+        }
+
+        // Funny comment
+        if (phrase.toLowerCase().contains("blockchain") && phrase.toLowerCase().contains("ai")) {
+            System.out.println("💰 Bonus: This phrase could get you VC funding!");
+        }
+        if (phrase.toLowerCase().contains("serverless") && phrase.toLowerCase().contains("cloud")) {
+            System.out.println("☁️  Double cloud points!");
+        }
+    }
+
+    /**
+     * Helper method to count syllables (rough estimate)
+     */
+    private static int countSyllables(String word) {
+        word = word.toLowerCase();
+        int syllables = 0;
+        boolean previousWasVowel = false;
+
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
+            boolean isVowel = "aeiouy".indexOf(c) >= 0;
+
+            if (isVowel && !previousWasVowel) {
+                syllables++;
+            }
+            previousWasVowel = isVowel;
+        }
+
+        // Adjust for silent e
+        if (word.endsWith("e") && syllables > 1) {
+            syllables--;
+        }
+
+        return Math.max(1, syllables); // Every word has at least 1 syllable
+    }
+
+    /**
+     * Helper method to detect tech buzzwords
+     */
+    private static boolean isTechBuzzword(String word) {
+        String[] buzzwords = {
+                "ai", "blockchain", "cloud", "serverless", "microservices",
+                "iot", "quantum", "machine", "learning", "edge",
+                "distributed", "container", "framework", "api", "api",
+                "reactive", "functional", "agnostic", "native", "driven"
+        };
+
+        String lowerWord = word.toLowerCase();
+        for (String buzz : buzzwords) {
+            if (lowerWord.contains(buzz)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

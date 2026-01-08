@@ -172,12 +172,28 @@ public class PhraseOMatic {
     /**
      * Helper method to detect tech buzzwords
      */
+// Add this simple method to EnhancedPhraseOMatic:
+    public static void quickWordCount() {
+        String phrase = buildEnhancedPhrase();
+        String[] words = phrase.split(" ");
 
-    // In generateSinglePhrase() method, after showing the phrase, add:
-System.out.print("Analyze this phrase? (yes/no): ");
-if (scanner.nextLine().equalsIgnoreCase("yes")) {
-        analyzePhrase(phrase);
+        System.out.println(ConsoleColors.GREEN_BOLD + "\n🔤 QUICK WORD COUNTER" + ConsoleColors.RESET);
+        System.out.println("Phrase: " + ConsoleColors.YELLOW + phrase + ConsoleColors.RESET);
+        System.out.println("Word count: " + words.length);
+
+        // Show word breakdown
+        System.out.println("Word breakdown:");
+        for (int i = 0; i < words.length; i++) {
+            System.out.println("  " + (i+1) + ". \"" + words[i] + "\" (" + words[i].length() + " letters)");
+        }
+
+        // Fun fact
+        if (words.length == 3) {
+            System.out.println("✨ Perfect tech phrase structure!");
+        }
     }
+
+    // Add to menu as option 9
     private static boolean isTechBuzzword(String word) {
         String[] buzzwords = {
                 "ai", "blockchain", "cloud", "serverless", "microservices",

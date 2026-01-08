@@ -79,6 +79,23 @@ public class PhraseOMatic {
         for (String word : words) {
             syllableCount += countSyllables(word);
         }
+        // In the switch statement, update/add options:
+        System.out.println("8. Analyze a phrase");
+        System.out.println("9. Surprise Me!");
+        System.out.println("10. Show statistics");
+        System.out.println("11. Show favorite phrases");
+        System.out.println("12. Exit to main menu");
+
+// Add this case to the switch:
+        case 8:
+        System.out.print("Enter a phrase to analyze (or press Enter for random): ");
+        String phraseToAnalyze = scanner.nextLine();
+        if (phraseToAnalyze.trim().isEmpty()) {
+            phraseToAnalyze = buildEnhancedPhrase();
+            System.out.println("Using random phrase: " + phraseToAnalyze);
+        }
+        analyzePhrase(phraseToAnalyze);
+        break;
 
         // Calculate readability score (simple Flesch-like)
         double readability = 206.835 - (1.015 * wordCount) - (84.6 * (syllableCount / (double)wordCount));

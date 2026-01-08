@@ -172,6 +172,12 @@ public class PhraseOMatic {
     /**
      * Helper method to detect tech buzzwords
      */
+
+    // In generateSinglePhrase() method, after showing the phrase, add:
+System.out.print("Analyze this phrase? (yes/no): ");
+if (scanner.nextLine().equalsIgnoreCase("yes")) {
+        analyzePhrase(phrase);
+    }
     private static boolean isTechBuzzword(String word) {
         String[] buzzwords = {
                 "ai", "blockchain", "cloud", "serverless", "microservices",

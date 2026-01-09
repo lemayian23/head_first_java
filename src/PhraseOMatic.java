@@ -398,6 +398,60 @@ public class TechLearningProjects {
             }
         }
 
+        // Add this method to the EnhancedPhraseOMatic class (anywhere after other methods):
+
+        /**
+         * Shows a daily tech tip about programming or technology
+         */
+        public static void showDailyTip() {
+            System.out.println(ConsoleColors.BLUE_BOLD + "\n💡 DAILY TECH TIP" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.CYAN + "══════════════════" + ConsoleColors.RESET);
+
+            String[] tips = {
+                    "Tip: Use meaningful variable names like 'userCount' instead of 'x' or 'temp'",
+                    "Tip: Always close your Scanner objects to prevent resource leaks",
+                    "Tip: Comment your code today, thank yourself tomorrow!",
+                    "Tip: The 'final' keyword makes variables constant - use it for values that won't change",
+                    "Tip: Arrays start at index 0 in Java (and most programming languages)",
+                    "Tip: Use System.out.println() for debugging - it's a programmer's best friend!",
+                    "Tip: Break complex problems into smaller methods - each should do one thing well",
+                    "Tip: String concatenation with '+' is fine for small operations",
+                    "Tip: Always test edge cases - what happens with empty input or maximum values?",
+                    "Tip: Use try-catch blocks to handle potential errors gracefully",
+                    "Tip: The 'private' keyword helps with encapsulation - hide what doesn't need to be public",
+                    "Tip: DRY = Don't Repeat Yourself. If you're copying code, make it a method!",
+                    "Tip: Use .equals() to compare Strings, not == (which compares memory addresses)",
+                    "Tip: Arrays have a .length property, Strings have .length() method",
+                    "Tip: Random.nextInt(10) gives numbers 0-9, not 1-10",
+                    "Tip: While loops are great when you don't know how many iterations you need",
+                    "Tip: Switch statements are cleaner than long if-else chains for multiple conditions",
+                    "Tip: Use StringBuilder when concatenating Strings in a loop for better performance",
+                    "Tip: The main() method is static because it needs to be called without creating an object",
+                    "Tip: Java is case-sensitive - 'myVariable' and 'MyVariable' are different"
+            };
+
+            // Get today's day of month to show different tip each day
+            int dayOfMonth = java.time.LocalDate.now().getDayOfMonth();
+            int tipIndex = (dayOfMonth - 1) % tips.length; // Ensure we stay within array bounds
+
+            System.out.println("Day " + dayOfMonth + " of the month:");
+            System.out.println(ConsoleColors.YELLOW + tips[tipIndex] + ConsoleColors.RESET);
+
+            // Add a small challenge related to the tip
+            System.out.println(ConsoleColors.GREEN + "\n🎯 Related Challenge:" + ConsoleColors.RESET);
+            String[] challenges = {
+                    "Find one place in this program where you could improve a variable name",
+                    "Add a comment explaining why a particular piece of code works",
+                    "Think of an edge case you haven't tested yet",
+                    "Identify a method that could be broken into smaller pieces",
+                    "Find where .equals() is used instead of ==",
+                    "Look for a place where StringBuilder might be useful",
+                    "Find a switch statement or where one could be used"
+            };
+            Random rand = new Random();
+            System.out.println(ConsoleColors.CYAN + challenges[rand.nextInt(challenges.length)] + ConsoleColors.RESET);
+        }
+
         /**
          * Shows statistics
          */

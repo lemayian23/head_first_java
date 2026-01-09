@@ -686,6 +686,13 @@ public class TechLearningProjects {
             System.out.println("5. ℹ️  About these programs");
             System.out.println("6. 🚪 Exit");
 
+            System.out.println("8.  Surprise Me!");
+            System.out.println("9.  Show daily tech tip");
+            System.out.println("10. Copy last phrase to clipboard");
+            System.out.println("11. Show statistics");
+            System.out.println("12. Show favorite phrases");
+            System.out.println("13. Exit to main program");
+
             System.out.print(ConsoleColors.BLUE + "\nEnter your choice (1-6): " + ConsoleColors.RESET);
 
             if (!scanner.hasNextInt()) {

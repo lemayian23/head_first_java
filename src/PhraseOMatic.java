@@ -8,6 +8,7 @@ import java.util.Scanner;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
 
 public class TechLearningProjects {
 
@@ -151,13 +152,14 @@ public class TechLearningProjects {
                 System.out.println("3.  Quick random phrase");
                 System.out.println("4.  Analyze a phrase");
                 System.out.println("5.  Quick word counter");
-                System.out.println("6.  Show statistics");
-                System.out.println("7.  Show favorite phrases");
-                System.out.println("8.  Surprise Me!");
-                System.out.println("9.  Copy last phrase to clipboard");
-                System.out.println("10. Exit to main program");
+                System.out.println("6.  Show daily tech tip");
+                System.out.println("7.  Show statistics");
+                System.out.println("8.  Show favorite phrases");
+                System.out.println("9.  Surprise Me!");
+                System.out.println("10. Copy last phrase to clipboard");
+                System.out.println("11. Exit to main program");
 
-                System.out.print(ConsoleColors.BLUE + "\nEnter your choice (1-10): " + ConsoleColors.RESET);
+                System.out.print(ConsoleColors.BLUE + "\nEnter your choice (1-11): " + ConsoleColors.RESET);
 
                 if (!scanner.hasNextInt()) {
                     System.out.println(ConsoleColors.RED + "Please enter a number!" + ConsoleColors.RESET);
@@ -195,20 +197,22 @@ public class TechLearningProjects {
                         quickWordCount();
                         break;
                     case 6:
-                        showStatistics();
+                        showDailyTip();
                         break;
                     case 7:
-                        showFavorites();
+                        showStatistics();
                         break;
                     case 8:
-                        surpriseMe();
+                        showFavorites();
                         break;
                     case 9:
-                        copyLastPhrase();
+                        surpriseMe();
                         break;
                     case 10:
+                        copyLastPhrase();
+                        break;
+                    case 11:
                         System.out.println(ConsoleColors.GREEN + "Returning to main program..." + ConsoleColors.RESET);
-                        scanner.close();
                         return;
                     default:
                         System.out.println(ConsoleColors.RED + "Invalid choice! Please try again." + ConsoleColors.RESET);
@@ -398,8 +402,6 @@ public class TechLearningProjects {
             }
         }
 
-        // Add this method to the EnhancedPhraseOMatic class (anywhere after other methods):
-
         /**
          * Shows a daily tech tip about programming or technology
          */
@@ -431,7 +433,7 @@ public class TechLearningProjects {
             };
 
             // Get today's day of month to show different tip each day
-            int dayOfMonth = java.time.LocalDate.now().getDayOfMonth();
+            int dayOfMonth = LocalDate.now().getDayOfMonth();
             int tipIndex = (dayOfMonth - 1) % tips.length; // Ensure we stay within array bounds
 
             System.out.println("Day " + dayOfMonth + " of the month:");
@@ -686,13 +688,6 @@ public class TechLearningProjects {
             System.out.println("5. ℹ️  About these programs");
             System.out.println("6. 🚪 Exit");
 
-            System.out.println("8.  Surprise Me!");
-            System.out.println("9.  Show daily tech tip");
-            System.out.println("10. Copy last phrase to clipboard");
-            System.out.println("11. Show statistics");
-            System.out.println("12. Show favorite phrases");
-            System.out.println("13. Exit to main program");
-
             System.out.print(ConsoleColors.BLUE + "\nEnter your choice (1-6): " + ConsoleColors.RESET);
 
             if (!scanner.hasNextInt()) {
@@ -762,6 +757,7 @@ public class TechLearningProjects {
         System.out.println("   • Clipboard integration");
         System.out.println("   • Favorites system");
         System.out.println("   • Colorful console output");
+        System.out.println("   • Daily tech tips");
         System.out.println();
         System.out.println(ConsoleColors.GREEN + "Created to help learn Java programming concepts!" + ConsoleColors.RESET);
     }

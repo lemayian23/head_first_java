@@ -698,9 +698,7 @@ public class TechLearningProjects {
             return false;
         }
 
-        /**
-         * Builds a basic three-part phrase
-         */
+
         private static String buildBasicPhrase() {
             return getRandomWord(WORD_LIST_ONE) + " " +
                     getRandomWord(WORD_LIST_TWO) + " " +

@@ -852,6 +852,9 @@ public class TechLearningProjects {
 
             System.out.print(ConsoleColors.CYAN + "\nPress Enter to continue..." + ConsoleColors.RESET);
             scanner.nextLine();
+            System.out.println("11. Check code quality");
+            System.out.println("12. Copy last phrase to clipboard");
+            System.out.println("13. Exit to main program");
         }
     }
 

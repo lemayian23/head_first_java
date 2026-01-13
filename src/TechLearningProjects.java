@@ -99,6 +99,69 @@ public class TechLearningProjects {
     // ==================== ENHANCED PHRASEOMATIC WITH NEW FEATURES ====================
 
     public static class EnhancedPhraseOMatic {
+
+        /**
+         * Checks code quality of a Java code snippet
+         */
+        public static void checkCodeQuality() {
+            System.out.println(ConsoleColors.BLUE_BOLD + "\n🔍 CODE QUALITY CHECKER" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.CYAN + "═══════════════════════" + ConsoleColors.RESET);
+
+            String[] commonIssues = {
+                    "Missing semicolon (;) at end of statement",
+                    "Unused import statements",
+                    "Variable declared but never used",
+                    "Magic numbers (use constants instead)",
+                    "Long methods (should be under 20 lines)",
+                    "Poor variable names (x, temp, data)",
+                    "Missing comments for complex logic",
+                    "No error handling (try-catch blocks)",
+                    "Hard-coded values (put in constants)",
+                    "Duplicate code (violates DRY principle)"
+            };
+
+            String[] goodPractices = {
+                    "✅ Meaningful variable names",
+                    "✅ Proper indentation",
+                    "✅ Consistent naming conventions",
+                    "✅ Comments for complex logic",
+                    "✅ Error handling with try-catch",
+                    "✅ Methods do one thing only",
+                    "✅ Constants for magic numbers",
+                    "✅ Proper access modifiers",
+                    "✅ Code reuse through methods",
+                    "✅ Input validation"
+            };
+
+            Random rand = new Random();
+
+            System.out.println("Common issues to watch for:");
+            for (int i = 0; i < 3; i++) {
+                System.out.println("  • " + ConsoleColors.RED + commonIssues[rand.nextInt(commonIssues.length)] + ConsoleColors.RESET);
+            }
+
+            System.out.println("\nGood practices in your code:");
+            for (int i = 0; i < 3; i++) {
+                System.out.println("  • " + ConsoleColors.GREEN + goodPractices[rand.nextInt(goodPractices.length)] + ConsoleColors.RESET);
+            }
+
+            // Simple code analysis challenge
+            System.out.println(ConsoleColors.YELLOW + "\n🎯 Quick Challenge:" + ConsoleColors.RESET);
+            String[] challenges = {
+                    "Find a variable that could have a better name",
+                    "Look for a magic number you could make a constant",
+                    "Find a method that could be split into smaller methods",
+                    "Check if all Scanner objects are properly closed",
+                    "Look for duplicate code that could be a method"
+            };
+            System.out.println(ConsoleColors.CYAN + challenges[rand.nextInt(challenges.length)] + ConsoleColors.RESET);
+
+            // Fun rating
+            System.out.print("\nYour code quality rating: ");
+            String[] ratings = {"⭐ Needs work", "⭐⭐ Okay", "⭐⭐⭐ Good", "⭐⭐⭐⭐ Great", "⭐⭐⭐⭐⭐ Excellent!"};
+            System.out.println(ConsoleColors.YELLOW_BOLD + ratings[rand.nextInt(ratings.length)] + ConsoleColors.RESET);
+        }
+
         // Statistics
         private static int totalPhrasesGenerated = 0;
         private static int phrasesSavedToFile = 0;

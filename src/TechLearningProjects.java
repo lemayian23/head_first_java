@@ -846,6 +846,15 @@ public class TechLearningProjects {
                     System.out.println(ConsoleColors.GREEN_BOLD + "\nThank you for learning Java! Goodbye! 👋" + ConsoleColors.RESET);
                     scanner.close();
                     return;
+                case 11:
+                    checkCodeQuality();
+                    break;
+                case 12:
+                    copyLastPhrase();
+                    break;
+                case 13:
+                    System.out.println(ConsoleColors.GREEN + "Returning to main program..." + ConsoleColors.RESET);
+                    return;
                 default:
                     System.out.println(ConsoleColors.RED + "Invalid choice! Please try again." + ConsoleColors.RESET);
             }

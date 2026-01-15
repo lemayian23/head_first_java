@@ -135,6 +135,11 @@ public class TechLearningProjects {
 
             Random rand = new Random();
 
+            System.out.println("12. Java Syntax Quiz");
+            System.out.println("13. Check code quality");
+            System.out.println("14. Copy last phrase to clipboard");
+            System.out.println("15. Exit to main program");
+
             System.out.println("Common issues to watch for:");
             for (int i = 0; i < 3; i++) {
                 System.out.println("  • " + ConsoleColors.RED + commonIssues[rand.nextInt(commonIssues.length)] + ConsoleColors.RESET);

@@ -868,6 +868,88 @@ public class TechLearningProjects {
     }
 
     /**
+     * Interactive Java syntax quiz
+     */
+    public static void javaSyntaxQuiz(Scanner scanner) {
+        System.out.println(ConsoleColors.BLUE_BOLD + "\n🧠 JAVA SYNTAX QUIZ" + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.CYAN + "═══════════════════" + ConsoleColors.RESET);
+        System.out.println("Test your Java knowledge! Answer 3 quick questions.");
+
+        int score = 0;
+        int totalQuestions = 3;
+
+        // Question 1
+        System.out.println("\n1. What does this code output?");
+        System.out.println("   int x = 5;");
+        System.out.println("   System.out.println(x++);");
+        System.out.println("   A) 5");
+        System.out.println("   B) 6");
+        System.out.println("   C) 0");
+        System.out.print("   Your answer (A/B/C): ");
+        String answer1 = scanner.nextLine().toUpperCase();
+        if (answer1.equals("A")) {
+            System.out.println("   " + ConsoleColors.GREEN + "✅ Correct! x++ returns then increments." + ConsoleColors.RESET);
+            score++;
+        } else {
+            System.out.println("   " + ConsoleColors.RED + "❌ Incorrect! The answer is A) 5 (post-increment)" + ConsoleColors.RESET);
+        }
+
+        // Question 2
+        System.out.println("\n2. Which is correct for array declaration?");
+        System.out.println("   A) int array[5];");
+        System.out.println("   B) int[] array = new int[5];");
+        System.out.println("   C) array int[5];");
+        System.out.print("   Your answer (A/B/C): ");
+        String answer2 = scanner.nextLine().toUpperCase();
+        if (answer2.equals("B")) {
+            System.out.println("   " + ConsoleColors.GREEN + "✅ Correct! Java uses 'new' for arrays." + ConsoleColors.RESET);
+            score++;
+        } else {
+            System.out.println("   " + ConsoleColors.RED + "❌ Incorrect! The answer is B) int[] array = new int[5]" + ConsoleColors.RESET);
+        }
+
+        // Question 3
+        System.out.println("\n3. What's the output?");
+        System.out.println("   String s1 = \"Hello\";");
+        System.out.println("   String s2 = \"Hello\";");
+        System.out.println("   System.out.println(s1 == s2);");
+        System.out.println("   A) true");
+        System.out.println("   B) false");
+        System.out.println("   C) Error");
+        System.out.print("   Your answer (A/B/C): ");
+        String answer3 = scanner.nextLine().toUpperCase();
+        if (answer3.equals("A")) {
+            System.out.println("   " + ConsoleColors.GREEN + "✅ Correct! String literals are pooled." + ConsoleColors.RESET);
+            score++;
+        } else {
+            System.out.println("   " + ConsoleColors.RED + "❌ Incorrect! The answer is A) true (string pool)" + ConsoleColors.RESET);
+        }
+
+        // Results
+        System.out.println("\n" + ConsoleColors.YELLOW_BOLD + "📊 QUIZ RESULTS" + ConsoleColors.RESET);
+        System.out.println("Score: " + score + "/" + totalQuestions);
+
+        if (score == totalQuestions) {
+            System.out.println(ConsoleColors.GREEN_BOLD + "🎉 Perfect! You're a Java pro!" + ConsoleColors.RESET);
+        } else if (score >= totalQuestions/2) {
+            System.out.println(ConsoleColors.YELLOW + "👍 Good job! Keep practicing!" + ConsoleColors.RESET);
+        } else {
+            System.out.println(ConsoleColors.CYAN + "📚 Keep learning! You'll get better!" + ConsoleColors.RESET);
+        }
+
+        // Fun fact
+        String[] facts = {
+                "💡 Java was originally called Oak!",
+                "💡 Java arrays start at index 0!",
+                "💡 Use .equals() to compare String content!",
+                "💡 main() method must be public static void!",
+                "💡 System.out.println() prints with new line!"
+        };
+        Random rand = new Random();
+        System.out.println("\n" + facts[rand.nextInt(facts.length)]);
+    }
+
+    /**
      * Shows about information
      */
     public static void showAboutInfo() {

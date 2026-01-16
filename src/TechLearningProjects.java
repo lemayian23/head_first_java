@@ -99,74 +99,6 @@ public class TechLearningProjects {
     // ==================== ENHANCED PHRASEOMATIC WITH NEW FEATURES ====================
 
     public static class EnhancedPhraseOMatic {
-
-        /**
-         * Checks code quality of a Java code snippet
-         */
-        public static void checkCodeQuality() {
-            System.out.println(ConsoleColors.BLUE_BOLD + "\n🔍 CODE QUALITY CHECKER" + ConsoleColors.RESET);
-            System.out.println(ConsoleColors.CYAN + "═══════════════════════" + ConsoleColors.RESET);
-
-            String[] commonIssues = {
-                    "Missing semicolon (;) at end of statement",
-                    "Unused import statements",
-                    "Variable declared but never used",
-                    "Magic numbers (use constants instead)",
-                    "Long methods (should be under 20 lines)",
-                    "Poor variable names (x, temp, data)",
-                    "Missing comments for complex logic",
-                    "No error handling (try-catch blocks)",
-                    "Hard-coded values (put in constants)",
-                    "Duplicate code (violates DRY principle)"
-            };
-
-            String[] goodPractices = {
-                    "✅ Meaningful variable names",
-                    "✅ Proper indentation",
-                    "✅ Consistent naming conventions",
-                    "✅ Comments for complex logic",
-                    "✅ Error handling with try-catch",
-                    "✅ Methods do one thing only",
-                    "✅ Constants for magic numbers",
-                    "✅ Proper access modifiers",
-                    "✅ Code reuse through methods",
-                    "✅ Input validation"
-            };
-
-            Random rand = new Random();
-
-            System.out.println("12. Java Syntax Quiz");
-            System.out.println("13. Check code quality");
-            System.out.println("14. Copy last phrase to clipboard");
-            System.out.println("15. Exit to main program");
-
-            System.out.println("Common issues to watch for:");
-            for (int i = 0; i < 3; i++) {
-                System.out.println("  • " + ConsoleColors.RED + commonIssues[rand.nextInt(commonIssues.length)] + ConsoleColors.RESET);
-            }
-
-            System.out.println("\nGood practices in your code:");
-            for (int i = 0; i < 3; i++) {
-                System.out.println("  • " + ConsoleColors.GREEN + goodPractices[rand.nextInt(goodPractices.length)] + ConsoleColors.RESET);
-            }
-
-            // Simple code analysis challenge
-            System.out.println(ConsoleColors.YELLOW + "\n🎯 Quick Challenge:" + ConsoleColors.RESET);
-            String[] challenges = {
-                    "Find a variable that could have a better name",
-                    "Look for a magic number you could make a constant",
-                    "Find a method that could be split into smaller methods",
-                    "Check if all Scanner objects are properly closed",
-                    "Look for duplicate code that could be a method"
-            };
-            System.out.println(ConsoleColors.CYAN + challenges[rand.nextInt(challenges.length)] + ConsoleColors.RESET);
-
-            // Fun rating
-            System.out.print("\nYour code quality rating: ");
-            String[] ratings = {"⭐ Needs work", "⭐⭐ Okay", "⭐⭐⭐ Good", "⭐⭐⭐⭐ Great", "⭐⭐⭐⭐⭐ Excellent!"};
-            System.out.println(ConsoleColors.YELLOW_BOLD + ratings[rand.nextInt(ratings.length)] + ConsoleColors.RESET);
-        }
-
         // Statistics
         private static int totalPhrasesGenerated = 0;
         private static int phrasesSavedToFile = 0;
@@ -242,10 +174,12 @@ public class TechLearningProjects {
                 System.out.println("7.  Show statistics");
                 System.out.println("8.  Show favorite phrases");
                 System.out.println("9.  Surprise Me!");
-                System.out.println("10. Copy last phrase to clipboard");
-                System.out.println("11. Exit to main program");
+                System.out.println("10. Java syntax quiz");
+                System.out.println("11. Check code quality");
+                System.out.println("12. Copy last phrase to clipboard");
+                System.out.println("13. Exit to main program");
 
-                System.out.print(ConsoleColors.BLUE + "\nEnter your choice (1-11): " + ConsoleColors.RESET);
+                System.out.print(ConsoleColors.BLUE + "\nEnter your choice (1-13): " + ConsoleColors.RESET);
 
                 if (!scanner.hasNextInt()) {
                     System.out.println(ConsoleColors.RED + "Please enter a number!" + ConsoleColors.RESET);
@@ -295,9 +229,15 @@ public class TechLearningProjects {
                         surpriseMe();
                         break;
                     case 10:
-                        copyLastPhrase();
+                        javaSyntaxQuiz(scanner);
                         break;
                     case 11:
+                        checkCodeQuality();
+                        break;
+                    case 12:
+                        copyLastPhrase();
+                        break;
+                    case 13:
                         System.out.println(ConsoleColors.GREEN + "Returning to main program..." + ConsoleColors.RESET);
                         return;
                     default:
@@ -585,6 +525,150 @@ public class TechLearningProjects {
         }
 
         /**
+         * Interactive Java syntax quiz
+         */
+        public static void javaSyntaxQuiz(Scanner scanner) {
+            System.out.println(ConsoleColors.BLUE_BOLD + "\n🧠 JAVA SYNTAX QUIZ" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.CYAN + "═══════════════════" + ConsoleColors.RESET);
+            System.out.println("Test your Java knowledge! Answer 3 quick questions.");
+
+            int score = 0;
+            int totalQuestions = 3;
+
+            // Question 1
+            System.out.println("\n1. What does this code output?");
+            System.out.println("   int x = 5;");
+            System.out.println("   System.out.println(x++);");
+            System.out.println("   A) 5");
+            System.out.println("   B) 6");
+            System.out.println("   C) 0");
+            System.out.print("   Your answer (A/B/C): ");
+            String answer1 = scanner.nextLine().toUpperCase();
+            if (answer1.equals("A")) {
+                System.out.println("   " + ConsoleColors.GREEN + "✅ Correct! x++ returns then increments." + ConsoleColors.RESET);
+                score++;
+            } else {
+                System.out.println("   " + ConsoleColors.RED + "❌ Incorrect! The answer is A) 5 (post-increment)" + ConsoleColors.RESET);
+            }
+
+            // Question 2
+            System.out.println("\n2. Which is correct for array declaration?");
+            System.out.println("   A) int array[5];");
+            System.out.println("   B) int[] array = new int[5];");
+            System.out.println("   C) array int[5];");
+            System.out.print("   Your answer (A/B/C): ");
+            String answer2 = scanner.nextLine().toUpperCase();
+            if (answer2.equals("B")) {
+                System.out.println("   " + ConsoleColors.GREEN + "✅ Correct! Java uses 'new' for arrays." + ConsoleColors.RESET);
+                score++;
+            } else {
+                System.out.println("   " + ConsoleColors.RED + "❌ Incorrect! The answer is B) int[] array = new int[5]" + ConsoleColors.RESET);
+            }
+
+            // Question 3
+            System.out.println("\n3. What's the output?");
+            System.out.println("   String s1 = \"Hello\";");
+            System.out.println("   String s2 = \"Hello\";");
+            System.out.println("   System.out.println(s1 == s2);");
+            System.out.println("   A) true");
+            System.out.println("   B) false");
+            System.out.println("   C) Error");
+            System.out.print("   Your answer (A/B/C): ");
+            String answer3 = scanner.nextLine().toUpperCase();
+            if (answer3.equals("A")) {
+                System.out.println("   " + ConsoleColors.GREEN + "✅ Correct! String literals are pooled." + ConsoleColors.RESET);
+                score++;
+            } else {
+                System.out.println("   " + ConsoleColors.RED + "❌ Incorrect! The answer is A) true (string pool)" + ConsoleColors.RESET);
+            }
+
+            // Results
+            System.out.println("\n" + ConsoleColors.YELLOW_BOLD + "📊 QUIZ RESULTS" + ConsoleColors.RESET);
+            System.out.println("Score: " + score + "/" + totalQuestions);
+
+            if (score == totalQuestions) {
+                System.out.println(ConsoleColors.GREEN_BOLD + "🎉 Perfect! You're a Java pro!" + ConsoleColors.RESET);
+            } else if (score >= totalQuestions/2) {
+                System.out.println(ConsoleColors.YELLOW + "👍 Good job! Keep practicing!" + ConsoleColors.RESET);
+            } else {
+                System.out.println(ConsoleColors.CYAN + "📚 Keep learning! You'll get better!" + ConsoleColors.RESET);
+            }
+
+            // Fun fact
+            String[] facts = {
+                    "💡 Java was originally called Oak!",
+                    "💡 Java arrays start at index 0!",
+                    "💡 Use .equals() to compare String content!",
+                    "💡 main() method must be public static void!",
+                    "💡 System.out.println() prints with new line!"
+            };
+            Random rand = new Random();
+            System.out.println("\n" + facts[rand.nextInt(facts.length)]);
+        }
+
+        /**
+         * Checks code quality of a Java code snippet
+         */
+        public static void checkCodeQuality() {
+            System.out.println(ConsoleColors.BLUE_BOLD + "\n🔍 CODE QUALITY CHECKER" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.CYAN + "═══════════════════════" + ConsoleColors.RESET);
+
+            String[] commonIssues = {
+                    "Missing semicolon (;) at end of statement",
+                    "Unused import statements",
+                    "Variable declared but never used",
+                    "Magic numbers (use constants instead)",
+                    "Long methods (should be under 20 lines)",
+                    "Poor variable names (x, temp, data)",
+                    "Missing comments for complex logic",
+                    "No error handling (try-catch blocks)",
+                    "Hard-coded values (put in constants)",
+                    "Duplicate code (violates DRY principle)"
+            };
+
+            String[] goodPractices = {
+                    "✅ Meaningful variable names",
+                    "✅ Proper indentation",
+                    "✅ Consistent naming conventions",
+                    "✅ Comments for complex logic",
+                    "✅ Error handling with try-catch",
+                    "✅ Methods do one thing only",
+                    "✅ Constants for magic numbers",
+                    "✅ Proper access modifiers",
+                    "✅ Code reuse through methods",
+                    "✅ Input validation"
+            };
+
+            Random rand = new Random();
+
+            System.out.println("Common issues to watch for:");
+            for (int i = 0; i < 3; i++) {
+                System.out.println("  • " + ConsoleColors.RED + commonIssues[rand.nextInt(commonIssues.length)] + ConsoleColors.RESET);
+            }
+
+            System.out.println("\nGood practices in your code:");
+            for (int i = 0; i < 3; i++) {
+                System.out.println("  • " + ConsoleColors.GREEN + goodPractices[rand.nextInt(goodPractices.length)] + ConsoleColors.RESET);
+            }
+
+            // Simple code analysis challenge
+            System.out.println(ConsoleColors.YELLOW + "\n🎯 Quick Challenge:" + ConsoleColors.RESET);
+            String[] challenges = {
+                    "Find a variable that could have a better name",
+                    "Look for a magic number you could make a constant",
+                    "Find a method that could be split into smaller methods",
+                    "Check if all Scanner objects are properly closed",
+                    "Look for duplicate code that could be a method"
+            };
+            System.out.println(ConsoleColors.CYAN + challenges[rand.nextInt(challenges.length)] + ConsoleColors.RESET);
+
+            // Fun rating
+            System.out.print("\nYour code quality rating: ");
+            String[] ratings = {"⭐ Needs work", "⭐⭐ Okay", "⭐⭐⭐ Good", "⭐⭐⭐⭐ Great", "⭐⭐⭐⭐⭐ Excellent!"};
+            System.out.println(ConsoleColors.YELLOW_BOLD + ratings[rand.nextInt(ratings.length)] + ConsoleColors.RESET);
+        }
+
+        /**
          * Shows statistics
          */
         public static void showStatistics() {
@@ -766,7 +850,9 @@ public class TechLearningProjects {
             return false;
         }
 
-
+        /**
+         * Builds a basic three-part phrase
+         */
         private static String buildBasicPhrase() {
             return getRandomWord(WORD_LIST_ONE) + " " +
                     getRandomWord(WORD_LIST_TWO) + " " +
@@ -851,107 +937,13 @@ public class TechLearningProjects {
                     System.out.println(ConsoleColors.GREEN_BOLD + "\nThank you for learning Java! Goodbye! 👋" + ConsoleColors.RESET);
                     scanner.close();
                     return;
-                case 11:
-                    checkCodeQuality();
-                    break;
-                case 12:
-                    copyLastPhrase();
-                    break;
-                case 13:
-                    System.out.println(ConsoleColors.GREEN + "Returning to main program..." + ConsoleColors.RESET);
-                    return;
                 default:
                     System.out.println(ConsoleColors.RED + "Invalid choice! Please try again." + ConsoleColors.RESET);
             }
 
             System.out.print(ConsoleColors.CYAN + "\nPress Enter to continue..." + ConsoleColors.RESET);
             scanner.nextLine();
-            System.out.println("11. Check code quality");
-            System.out.println("12. Copy last phrase to clipboard");
-            System.out.println("13. Exit to main program");
         }
-    }
-
-    /**
-     * Interactive Java syntax quiz
-     */
-    public static void javaSyntaxQuiz(Scanner scanner) {
-        System.out.println(ConsoleColors.BLUE_BOLD + "\n🧠 JAVA SYNTAX QUIZ" + ConsoleColors.RESET);
-        System.out.println(ConsoleColors.CYAN + "═══════════════════" + ConsoleColors.RESET);
-        System.out.println("Test your Java knowledge! Answer 3 quick questions.");
-
-        int score = 0;
-        int totalQuestions = 3;
-
-        // Question 1
-        System.out.println("\n1. What does this code output?");
-        System.out.println("   int x = 5;");
-        System.out.println("   System.out.println(x++);");
-        System.out.println("   A) 5");
-        System.out.println("   B) 6");
-        System.out.println("   C) 0");
-        System.out.print("   Your answer (A/B/C): ");
-        String answer1 = scanner.nextLine().toUpperCase();
-        if (answer1.equals("A")) {
-            System.out.println("   " + ConsoleColors.GREEN + "✅ Correct! x++ returns then increments." + ConsoleColors.RESET);
-            score++;
-        } else {
-            System.out.println("   " + ConsoleColors.RED + "❌ Incorrect! The answer is A) 5 (post-increment)" + ConsoleColors.RESET);
-        }
-
-        // Question 2
-        System.out.println("\n2. Which is correct for array declaration?");
-        System.out.println("   A) int array[5];");
-        System.out.println("   B) int[] array = new int[5];");
-        System.out.println("   C) array int[5];");
-        System.out.print("   Your answer (A/B/C): ");
-        String answer2 = scanner.nextLine().toUpperCase();
-        if (answer2.equals("B")) {
-            System.out.println("   " + ConsoleColors.GREEN + "✅ Correct! Java uses 'new' for arrays." + ConsoleColors.RESET);
-            score++;
-        } else {
-            System.out.println("   " + ConsoleColors.RED + "❌ Incorrect! The answer is B) int[] array = new int[5]" + ConsoleColors.RESET);
-        }
-
-        // Question 3
-        System.out.println("\n3. What's the output?");
-        System.out.println("   String s1 = \"Hello\";");
-        System.out.println("   String s2 = \"Hello\";");
-        System.out.println("   System.out.println(s1 == s2);");
-        System.out.println("   A) true");
-        System.out.println("   B) false");
-        System.out.println("   C) Error");
-        System.out.print("   Your answer (A/B/C): ");
-        String answer3 = scanner.nextLine().toUpperCase();
-        if (answer3.equals("A")) {
-            System.out.println("   " + ConsoleColors.GREEN + "✅ Correct! String literals are pooled." + ConsoleColors.RESET);
-            score++;
-        } else {
-            System.out.println("   " + ConsoleColors.RED + "❌ Incorrect! The answer is A) true (string pool)" + ConsoleColors.RESET);
-        }
-
-        // Results
-        System.out.println("\n" + ConsoleColors.YELLOW_BOLD + "📊 QUIZ RESULTS" + ConsoleColors.RESET);
-        System.out.println("Score: " + score + "/" + totalQuestions);
-
-        if (score == totalQuestions) {
-            System.out.println(ConsoleColors.GREEN_BOLD + "🎉 Perfect! You're a Java pro!" + ConsoleColors.RESET);
-        } else if (score >= totalQuestions/2) {
-            System.out.println(ConsoleColors.YELLOW + "👍 Good job! Keep practicing!" + ConsoleColors.RESET);
-        } else {
-            System.out.println(ConsoleColors.CYAN + "📚 Keep learning! You'll get better!" + ConsoleColors.RESET);
-        }
-
-        // Fun fact
-        String[] facts = {
-                "💡 Java was originally called Oak!",
-                "💡 Java arrays start at index 0!",
-                "💡 Use .equals() to compare String content!",
-                "💡 main() method must be public static void!",
-                "💡 System.out.println() prints with new line!"
-        };
-        Random rand = new Random();
-        System.out.println("\n" + facts[rand.nextInt(facts.length)]);
     }
 
     /**
@@ -981,6 +973,8 @@ public class TechLearningProjects {
         System.out.println("   • Colorful console output");
         System.out.println("   • Daily tech tips");
         System.out.println("   • Easter egg secrets!");
+        System.out.println("   • Java syntax quiz");
+        System.out.println("   • Code quality checker");
         System.out.println();
         System.out.println(ConsoleColors.GREEN + "Created to help learn Java programming concepts!" + ConsoleColors.RESET);
     }

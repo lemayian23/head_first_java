@@ -99,6 +99,103 @@ public class TechLearningProjects {
     // ==================== ENHANCED PHRASEOMATIC WITH NEW FEATURES ====================
 
     public static class EnhancedPhraseOMatic {
+
+
+        /**
+         * Generates useful Java code snippets
+         */
+        public static void generateCodeSnippet() {
+            System.out.println(ConsoleColors.BLUE_BOLD + "\n💻 JAVA CODE SNIPPET GENERATOR" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.CYAN + "═══════════════════════════════" + ConsoleColors.RESET);
+
+            String[][] snippets = {
+                    {
+                            "📝 Array Declaration & Initialization",
+                            "// Declare and initialize an array\n" +
+                                    "String[] fruits = {\"apple\", \"banana\", \"orange\"};\n" +
+                                    "int[] numbers = new int[5]; // Array of 5 integers\n" +
+                                    "// Access elements (arrays start at 0)\n" +
+                                    "System.out.println(fruits[0]); // Prints: apple"
+                    },
+                    {
+                            "🔄 For Loop Example",
+                            "// Loop through an array\n" +
+                                    "for (int i = 0; i < fruits.length; i++) {\n" +
+                                    "    System.out.println(\"Fruit \" + i + \": \" + fruits[i]);\n" +
+                                    "}\n" +
+                                    "// Enhanced for loop (for-each)\n" +
+                                    "for (String fruit : fruits) {\n" +
+                                    "    System.out.println(fruit);\n" +
+                                    "}"
+                    },
+                    {
+                            "🎲 Random Number Generation",
+                            "import java.util.Random;\n" +
+                                    "\n" +
+                                    "Random rand = new Random();\n" +
+                                    "int randomNum = rand.nextInt(10); // 0-9\n" +
+                                    "int diceRoll = rand.nextInt(6) + 1; // 1-6\n" +
+                                    "boolean coinFlip = rand.nextBoolean(); // true/false"
+                    },
+                    {
+                            "🔤 String Manipulation",
+                            "String name = \"Java\";\n" +
+                                    "System.out.println(name.length()); // 4\n" +
+                                    "System.out.println(name.toUpperCase()); // JAVA\n" +
+                                    "System.out.println(name.toLowerCase()); // java\n" +
+                                    "System.out.println(name.charAt(0)); // J\n" +
+                                    "System.out.println(name.substring(1, 3)); // av"
+                    },
+                    {
+                            "📊 Scanner Input Example",
+                            "import java.util.Scanner;\n" +
+                                    "\n" +
+                                    "Scanner scanner = new Scanner(System.in);\n" +
+                                    "System.out.print(\"Enter your name: \");\n" +
+                                    "String userName = scanner.nextLine();\n" +
+                                    "System.out.print(\"Enter your age: \");\n" +
+                                    "int age = scanner.nextInt();\n" +
+                                    "scanner.close(); // Don't forget to close!"
+                    },
+                    {
+                            "✅ If-Else Statement",
+                            "int score = 85;\n" +
+                                    "\n" +
+                                    "if (score >= 90) {\n" +
+                                    "    System.out.println(\"Grade: A\");\n" +
+                                    "} else if (score >= 80) {\n" +
+                                    "    System.out.println(\"Grade: B\");\n" +
+                                    "} else if (score >= 70) {\n" +
+                                    "    System.out.println(\"Grade: C\");\n" +
+                                    "} else {\n" +
+                                    "    System.out.println(\"Grade: F\");\n" +
+                                    "}"
+                    }
+            };
+
+            Random rand = new Random();
+            int index = rand.nextInt(snippets.length);
+
+            System.out.println(snippets[index][0]);
+            System.out.println(ConsoleColors.YELLOW + "═══════════════════════════════" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.GREEN + snippets[index][1] + ConsoleColors.RESET);
+
+            // Copy to clipboard option
+            System.out.print(ConsoleColors.CYAN + "\n📋 Copy this snippet to clipboard? (yes/no): " + ConsoleColors.RESET);
+            Scanner scanner = new Scanner(System.in);
+            if (scanner.nextLine().equalsIgnoreCase("yes")) {
+                copyToClipboard(snippets[index][1]);
+            }
+
+            // Learning tip
+            String[] tips = {
+                    "💡 Try modifying this code to practice!",
+                    "💡 Type this code in your IDE and run it!",
+                    "💡 Experiment with different values!",
+                    "💡 Add your own features to the code!"
+            };
+            System.out.println(ConsoleColors.PURPLE + "\n" + tips[rand.nextInt(tips.length)] + ConsoleColors.RESET);
+        }
         // Statistics
         private static int totalPhrasesGenerated = 0;
         private static int phrasesSavedToFile = 0;

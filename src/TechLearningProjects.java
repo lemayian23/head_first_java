@@ -242,7 +242,7 @@ public class TechLearningProjects {
             System.out.println(ConsoleColors.GREEN_BOLD + "       ENHANCED PHRASE-O-MATIC v2.0       " + ConsoleColors.RESET);
             System.out.println(ConsoleColors.CYAN_BOLD + "═══════════════════════════════════════════" + ConsoleColors.RESET);
 
-            // Secret easter egg
+            // secret easter egg print function
             System.out.print("Enter a secret code (or press Enter to skip): ");
             String secretCode = scanner.nextLine();
 

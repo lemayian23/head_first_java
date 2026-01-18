@@ -100,6 +100,106 @@ public class TechLearningProjects {
 
     public static class EnhancedPhraseOMatic {
 
+        /**
+         * Debugging challenge - find the bug in the code!
+         */
+        public static void debugChallenge() {
+            System.out.println(ConsoleColors.BLUE_BOLD + "\n🔍 DEBUG CHALLENGE" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.CYAN + "═══════════════════" + ConsoleColors.RESET);
+            System.out.println("Find the bug in this Java code!");
+
+            String[][] challenges = {
+                    {
+                            "Bug: Array Index Out of Bounds",
+                            "String[] fruits = {\"apple\", \"banana\"};\n" +
+                                    "for (int i = 0; i <= fruits.length; i++) {\n" +
+                                    "    System.out.println(fruits[i]);\n" +
+                                    "}",
+                            "Change 'i <= fruits.length' to 'i < fruits.length'\n" +
+                                    "Arrays go from 0 to length-1"
+                    },
+                    {
+                            "Bug: Integer Division",
+                            "int a = 5;\n" +
+                                    "int b = 2;\n" +
+                                    "double result = a / b;\n" +
+                                    "System.out.println(\"Result: \" + result); // Prints 2.0 not 2.5",
+                            "Change to: double result = (double) a / b;\n" +
+                                    "Or: double result = a / 2.0;"
+                    },
+                    {
+                            "Bug: String Comparison",
+                            "String s1 = new String(\"hello\");\n" +
+                                    "String s2 = new String(\"hello\");\n" +
+                                    "if (s1 == s2) {\n" +
+                                    "    System.out.println(\"Equal\");\n" +
+                                    "} else {\n" +
+                                    "    System.out.println(\"Not equal\");\n" +
+                                    "}",
+                            "Use .equals() for String content comparison:\n" +
+                                    "if (s1.equals(s2))"
+                    },
+                    {
+                            "Bug: Infinite Loop",
+                            "int i = 0;\n" +
+                                    "while (i < 10) {\n" +
+                                    "    System.out.println(\"Number: \" + i);\n" +
+                                    "    // Missing i++\n" +
+                                    "}",
+                            "Add i++ inside the loop:\n" +
+                                    "while (i < 10) {\n" +
+                                    "    System.out.println(\"Number: \" + i);\n" +
+                                    "    i++;\n" +
+                                    "}"
+                    },
+                    {
+                            "Bug: Scanner Issue",
+                            "Scanner scanner = new Scanner(System.in);\n" +
+                                    "System.out.print(\"Enter age: \");\n" +
+                                    "int age = scanner.nextInt();\n" +
+                                    "System.out.print(\"Enter name: \");\n" +
+                                    "String name = scanner.nextLine(); // Skips!\n",
+                            "Add scanner.nextLine() after nextInt():\n" +
+                                    "int age = scanner.nextInt();\n" +
+                                    "scanner.nextLine(); // Consume newline\n" +
+                                    "String name = scanner.nextLine();"
+                    }
+            };
+
+            Random rand = new Random();
+            int index = rand.nextInt(challenges.length);
+
+            System.out.println("⚠️  Buggy Code:");
+            System.out.println(ConsoleColors.YELLOW + "═══════════════════" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.RED + challenges[index][1] + ConsoleColors.RESET);
+
+            System.out.print("\n💭 Think about the bug... Press Enter when ready for the solution...");
+            new Scanner(System.in).nextLine();
+
+            System.out.println("\n✅ Solution:");
+            System.out.println(ConsoleColors.GREEN + "═══════════════════" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.GREEN + challenges[index][2] + ConsoleColors.RESET);
+
+            // Debugging tips
+            String[] tips = {
+                    "💡 Tip: Always test edge cases!",
+                    "💡 Tip: Use print statements for debugging!",
+                    "💡 Tip: Step through code line by line!",
+                    "💡 Tip: Check array indices carefully!",
+                    "💡 Tip: Watch for off-by-one errors!"
+            };
+            System.out.println("\n" + ConsoleColors.PURPLE + tips[rand.nextInt(tips.length)] + ConsoleColors.RESET);
+
+            // Mini quiz
+            System.out.print("\n🎯 Quick check: Did you spot the bug before the solution? (yes/no): ");
+            String answer = new Scanner(System.in).nextLine();
+            if (answer.equalsIgnoreCase("yes")) {
+                System.out.println(ConsoleColors.GREEN_BOLD + "🎉 Great debugging skills!" + ConsoleColors.RESET);
+            } else {
+                System.out.println(ConsoleColors.CYAN + "📚 Keep practicing! Debugging takes time to master." + ConsoleColors.RESET);
+            }
+        }
+
 
         /**
          * Generates useful Java code snippets

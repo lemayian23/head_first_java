@@ -375,6 +375,10 @@ public class TechLearningProjects {
                 System.out.println("11. Check code quality");
                 System.out.println("12. Copy last phrase to clipboard");
                 System.out.println("13. Exit to main program");
+                System.out.println("14. Debug challenge");
+                System.out.println("15. Generate Java code snippet");
+                System.out.println("16. Copy last phrase to clipboard");
+                System.out.println("17. Exit to main program");
 
                 System.out.print(ConsoleColors.BLUE + "\nEnter your choice (1-13): " + ConsoleColors.RESET);
 

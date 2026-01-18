@@ -462,9 +462,7 @@ public class TechLearningProjects {
             }
         }
 
-        /**
-         * Generates a single random phrase
-         */
+
         public static void generateSinglePhrase(Scanner scanner) {
             String phrase = buildEnhancedPhrase();
             lastGeneratedPhrase = phrase;

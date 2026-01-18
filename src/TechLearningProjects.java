@@ -442,9 +442,15 @@ public class TechLearningProjects {
                         generateCodeSnippet();
                         break;
                     case 14:
-                        copyLastPhrase();
+                        debugChallenge();
                         break;
                     case 15:
+                        generateCodeSnippet();
+                        break;
+                    case 16:
+                        copyLastPhrase();
+                        break;
+                    case 17:
                         System.out.println(ConsoleColors.GREEN + "Returning to main program..." + ConsoleColors.RESET);
                         return;
                     default:

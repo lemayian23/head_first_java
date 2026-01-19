@@ -1353,6 +1353,4 @@ public class TechLearningProjects {
         System.out.println();
         System.out.println(ConsoleColors.GREEN + "Created to help learn Java programming concepts!" + ConsoleColors.RESET);
     }
-
-    quickBug();
 }

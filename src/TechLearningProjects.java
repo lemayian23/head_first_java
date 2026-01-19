@@ -601,6 +601,21 @@ public class TechLearningProjects {
                         break;
                     case 17:
                         System.out.println(ConsoleColors.GREEN + "Returning to main program..." + ConsoleColors.RESET);
+                        break;
+                    case 18:
+                        codeFormatter();
+                        break;
+                    case 19:
+                        debugChallenge();
+                        break;
+                    case 20:
+                        generateCodeSnippet();
+                        break;
+                    case 21:
+                        copyLastPhrase();
+                        break;
+                    case 22:
+                        System.out.println(ConsoleColors.GREEN + "Returning to main program..." + ConsoleColors.RESET);
                         return;
                     default:
                         System.out.println(ConsoleColors.RED + "Invalid choice! Please try again." + ConsoleColors.RESET);

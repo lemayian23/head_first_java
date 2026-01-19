@@ -101,6 +101,150 @@ public class TechLearningProjects {
     public static class EnhancedPhraseOMatic {
 
         /**
+         * Shows code formatting examples and tips
+         */
+        public static void codeFormatter() {
+            System.out.println(ConsoleColors.BLUE_BOLD + "\n✨ CODE FORMATTER" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.CYAN + "══════════════════" + ConsoleColors.RESET);
+            System.out.println("Learn Java code formatting best practices!");
+
+            String[][] formats = {
+                    {
+                            "📏 Indentation",
+                            "// Good (4 spaces or 1 tab):\n" +
+                                    "if (condition) {\n" +
+                                    "    System.out.println(\"Hello\");\n" +
+                                    "    if (anotherCondition) {\n" +
+                                    "        System.out.println(\"Nested\");\n" +
+                                    "    }\n" +
+                                    "}\n" +
+                                    "\n" +
+                                    "// Bad (inconsistent):\n" +
+                                    "if (condition) {\n" +
+                                    "System.out.println(\"Hello\");\n" +
+                                    "  if (anotherCondition) {\n" +
+                                    "        System.out.println(\"Nested\");\n" +
+                                    "  }\n" +
+                                    "}"
+                    },
+                    {
+                            "🏷️  Naming Conventions",
+                            "// Classes: PascalCase\n" +
+                                    "public class MyClass {\n" +
+                                    "    \n" +
+                                    "    // Variables: camelCase\n" +
+                                    "    private int userCount;\n" +
+                                    "    private String firstName;\n" +
+                                    "    \n" +
+                                    "    // Constants: UPPER_CASE\n" +
+                                    "    public static final int MAX_USERS = 100;\n" +
+                                    "    \n" +
+                                    "    // Methods: camelCase\n" +
+                                    "    public void calculateTotal() {\n" +
+                                    "        // method body\n" +
+                                    "    }\n" +
+                                    "}"
+                    },
+                    {
+                            "📝 Comments",
+                            "// Single line comment\n" +
+                                    "\n" +
+                                    "/*\n" +
+                                    " * Multi-line comment\n" +
+                                    " * Use for longer explanations\n" +
+                                    " */\n" +
+                                    "\n" +
+                                    "/**\n" +
+                                    " * Javadoc comment for documentation\n" +
+                                    " * @param username The user's name\n" +
+                                    " * @return Welcome message\n" +
+                                    " */\n" +
+                                    "public String welcomeUser(String username) {\n" +
+                                    "    // Good: Explain WHY, not WHAT\n" +
+                                    "    return \"Hello, \" + username;\n" +
+                                    "}"
+                    },
+                    {
+                            "📦 Spacing",
+                            "// Good spacing:\n" +
+                                    "if (x > 5 && y < 10) {\n" +
+                                    "    result = calculate(x, y);\n" +
+                                    "}\n" +
+                                    "\n" +
+                                    "// Around operators:\n" +
+                                    "int sum = a + b;\n" +
+                                    "boolean isEqual = (x == y);\n" +
+                                    "\n" +
+                                    "// After commas:\n" +
+                                    "String[] fruits = {\"apple\", \"banana\", \"orange\"};\n" +
+                                    "\n" +
+                                    "// Around braces:\n" +
+                                    "public void myMethod() {\n" +
+                                    "    // code\n" +
+                                    "}"
+                    },
+                    {
+                            "🧹 Clean Code",
+                            "// Keep methods short (under 20 lines):\n" +
+                                    "public void processUser() {\n" +
+                                    "    validateInput();\n" +
+                                    "    calculateResult();\n" +
+                                    "    displayOutput();\n" +
+                                    "}\n" +
+                                    "\n" +
+                                    "// One purpose per method:\n" +
+                                    "private void validateInput() {\n" +
+                                    "    // only validation logic\n" +
+                                    "}\n" +
+                                    "\n" +
+                                    "private void calculateResult() {\n" +
+                                    "    // only calculation logic\n" +
+                                    "}\n" +
+                                    "\n" +
+                                    "private void displayOutput() {\n" +
+                                    "    // only display logic\n" +
+                                    "}"
+                    }
+            };
+
+            Random rand = new Random();
+            int index = rand.nextInt(formats.length);
+
+            System.out.println("📚 Topic: " + formats[index][0]);
+            System.out.println(ConsoleColors.YELLOW + "══════════════════════════════════" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.GREEN + formats[index][1] + ConsoleColors.RESET);
+
+            // Quick formatting challenge
+            System.out.println(ConsoleColors.PURPLE + "\n🎯 FORMATTING CHALLENGE:" + ConsoleColors.RESET);
+            String[] challenges = {
+                    "Find code in this project that needs better indentation",
+                    "Look for a variable that could have a better name",
+                    "Find a method that could use a Javadoc comment",
+                    "Look for inconsistent spacing around operators",
+                    "Find a method that's too long and could be split"
+            };
+            System.out.println(ConsoleColors.CYAN + challenges[rand.nextInt(challenges.length)] + ConsoleColors.RESET);
+
+            // Formatting tip
+            String[] tips = {
+                    "💡 Tip: Consistent formatting makes code easier to read!",
+                    "💡 Tip: Use IDE auto-format (Ctrl+Alt+L in IntelliJ)!",
+                    "💡 Tip: Good names reduce need for comments!",
+                    "💡 Tip: Short methods are easier to test and debug!",
+                    "💡 Tip: Format as you code, not at the end!"
+            };
+            System.out.println("\n" + tips[rand.nextInt(tips.length)]);
+
+            // Copy option
+            System.out.print(ConsoleColors.BLUE + "\n📋 Copy formatting example? (yes/no): " + ConsoleColors.RESET);
+            Scanner scanner = new Scanner(System.in);
+            if (scanner.nextLine().equalsIgnoreCase("yes")) {
+                copyToClipboard(formats[index][1]);
+                System.out.println(ConsoleColors.GREEN + "✅ Copied to clipboard!" + ConsoleColors.RESET);
+            }
+        }
+
+        /**
          * Debugging challenge - find the bug in the code!
          */
         public static void debugChallenge() {

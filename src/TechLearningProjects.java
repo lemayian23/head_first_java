@@ -1,5 +1,9 @@
 // ==================== ENHANCED PHRASEOMATIC WITH NEW FEATURES ====================
 
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+
 public static class EnhancedPhraseOMatic {
     // Statistics
     private static int totalPhrasesGenerated = 0;

@@ -3,6 +3,14 @@
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
+import java.util.Scanner;
+import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
+import java.time.LocalDate;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 
 public static class EnhancedPhraseOMatic {
     // Statistics

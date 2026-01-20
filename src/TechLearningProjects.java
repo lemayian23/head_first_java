@@ -94,6 +94,34 @@ public static class EnhancedPhraseOMatic {
             System.out.println("14. Code formatter");
             System.out.println("15. Exit to main program");
 
+            // ==================== CONSOLE COLORS ====================
+
+// Remove the "public static class ConsoleColors {" line
+// And replace with this:
+
+// Color constants - NOT as an inner class
+            interface ConsoleColors {
+                // Reset
+                String RESET = "\033[0m";
+
+                // Colors
+                String RED = "\033[0;31m";
+                String GREEN = "\033[0;32m";
+                String YELLOW = "\033[0;33m";
+                String BLUE = "\033[0;34m";
+                String PURPLE = "\033[0;35m";
+                String CYAN = "\033[0;36m";
+                String WHITE = "\033[0;37m";
+
+                // Bold Colors
+                String RED_BOLD = "\033[1;31m";
+                String GREEN_BOLD = "\033[1;32m";
+                String YELLOW_BOLD = "\033[1;33m";
+                String BLUE_BOLD = "\033[1;34m";
+                String PURPLE_BOLD = "\033[1;35m";
+                String CYAN_BOLD = "\033[1;36m";
+            }
+
             System.out.print(ConsoleColors.BLUE + "\nEnter your choice (1-15): " + ConsoleColors.RESET);
 
             if (!scanner.hasNextInt()) {

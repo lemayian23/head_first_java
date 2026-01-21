@@ -93,9 +93,6 @@ public static class EnhancedPhraseOMatic {
             System.out.println("13. Generate Java code snippet");
             System.out.println("14. Code formatter");
             System.out.println("15. Exit to main program");
-
-            // ==================== CONSOLE COLORS ====================
-
 // Color constants - NOT as an inner class
             interface ConsoleColors {
                 // Reset

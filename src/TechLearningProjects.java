@@ -177,9 +177,6 @@ public static class EnhancedPhraseOMatic {
                 case 13:
                     generateCodeSnippet();
                     break;
-                case 14:
-                    codeFormatter();
-                    break;
                 case 15:
                     System.out.println(ConsoleColors.GREEN + "Returning to main program..." + ConsoleColors.RESET);
                     return;

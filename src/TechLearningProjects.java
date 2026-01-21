@@ -96,8 +96,7 @@ public static class EnhancedPhraseOMatic {
 
             // ==================== CONSOLE COLORS ====================
 
-// Remove the "public static class ConsoleColors {" line
-// And replace with this:
+// Remove the "public static class ConsoleColors {" l
 
 // Color constants - NOT as an inner class
             interface ConsoleColors {

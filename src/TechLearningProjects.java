@@ -171,9 +171,6 @@ public static class EnhancedPhraseOMatic {
                 case 11:
                     checkCodeQuality();
                     break;
-                case 12:
-                    debugChallenge();
-                    break;
                 case 15:
                     System.out.println(ConsoleColors.GREEN + "Returning to main program..." + ConsoleColors.RESET);
                     return;
